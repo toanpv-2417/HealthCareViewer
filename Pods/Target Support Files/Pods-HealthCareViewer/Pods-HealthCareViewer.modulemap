@@ -1,0 +1,6 @@
+module Pods_HealthCareViewer {
+  umbrella header "Pods-HealthCareViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}
