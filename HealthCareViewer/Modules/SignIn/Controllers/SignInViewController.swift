@@ -7,8 +7,13 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: BaseViewController {
     
+    // MARK : Property
+    
+    
+    
+   //MARK UI ELement
    private let logoImage : UIImageView = {
         let imageView = UIImageView()
         imageView.image =  UIImage(named: "b")
@@ -18,46 +23,38 @@ class SignInViewController: UIViewController {
         
         return imageView
     }()
-    private let patientCodeLabel : UILabel = {
-        let label = UILabel()
-        label.text = "Patient ID"
-        label.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        return label
-    }()
-    private let patientCodeTextField : UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Patient ID input"
-        return textField
-    }()
     
     
-    private let lineView : UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
+    
+    private let patientInputView : TextFieldWithTitle = {
+        let view = TextFieldWithTitle()
+        view.placeHolder = "input yout ID"
+        view.title = "patient ID"
         return view
     }()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        // Do any additional setup after loading the view.
+    
+    
+    private let passwordInputView : TextFieldWithTitle = {
+        let view = TextFieldWithTitle()
+        view.placeHolder = "your password"
+        view.title = "password"
+        return view
+       
+    }()
+    
+    
+    
+    
+    // MARK View lifecycle
+    override func initialize() {
+        super.initialize()
         setUpLogoImageView()
-        setUpViewPatientLabel()
-        setUpViewPatientTextField()
-        setUpLineView()
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
-        
+        setUpViewPatientInput()
     }
+    
+    
+    
+    //MARK :setup view
     private func setUpLogoImageView(){
         view.addSubview(logoImage)
         logoImage.snp.makeConstraints { (make) in
@@ -67,33 +64,24 @@ class SignInViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
     }
-    
-    private func setUpViewPatientLabel(){
-        view.addSubview(patientCodeLabel)
-        patientCodeLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(40)
-            make.top.equalTo(logoImage.snp.bottom).offset(50)
+    private func setUpViewPatientInput (){
+        view.addSubview(patientInputView)
+//        patientInputView.backgroundColor = .red
+        patientInputView.snp.makeConstraints { (make) in
+            make.top.equalTo(logoImage.snp.bottom).offset(Dimension.shared.largeVerticalMargin_56)
+            make.left.equalToSuperview().offset(Dimension.shared.largeVerticalMargin_32)
+            make.right.equalToSuperview().offset(-Dimension.shared.largeVerticalMargin_32)
         }
-    }
-    private func setUpViewPatientTextField(){
-        view.addSubview(patientCodeTextField)
-        patientCodeTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(patientCodeLabel.snp.bottom).offset(10)
-            make.left.equalToSuperview().offset(40)
-            make.right.equalToSuperview().offset(-40)
-            make.height.equalTo(40)
+        view.addSubview(passwordInputView)
+//        passwordInputView.backgroundColor = .gray
+        passwordInputView.snp.makeConstraints { (make) in
+            make.top.equalTo(patientInputView.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(Dimension.shared.largeVerticalMargin_32)
+            make.right.equalToSuperview().offset(-Dimension.shared.largeVerticalMargin_32)
         }
-    }
-    private func setUpLineView (){
-        view.addSubview(lineView)
-        lineView.snp.makeConstraints { (make) in
-            make.top.equalTo(patientCodeTextField.snp.bottom).offset(0)
-            make.left.equalToSuperview().offset(40)
-            make.right.equalToSuperview().offset(-40)
-            make.height.equalTo(1)
-        }
-        
-        
     }
     
+    
+    
+
 }

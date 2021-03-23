@@ -19,6 +19,12 @@
 		ACD8310726090C1500B57D52 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8310626090C1500B57D52 /* SignInView.swift */; };
 		ACD8310C26090C2700B57D52 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8310B26090C2700B57D52 /* SignInModel.swift */; };
 		C62630111EF6D4A01E2C156D /* libPods-HealthCareViewer-HealthCareViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A43B3DC2024113F5B2A9AD /* libPods-HealthCareViewer-HealthCareViewerUITests.a */; };
+		CBD771C82609866B00BFC816 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771C72609866A00BFC816 /* BaseViewController.swift */; };
+		CBD771CD2609898A00BFC816 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771CC2609898A00BFC816 /* BaseView.swift */; };
+		CBD771D2260989A600BFC816 /* TextFieldWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771D1260989A600BFC816 /* TextFieldWithTitle.swift */; };
+		CBD771DA2609BCBB00BFC816 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771D92609BCBB00BFC816 /* Theme.swift */; };
+		CBD771DF2609BCC800BFC816 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771DE2609BCC800BFC816 /* Dimension.swift */; };
+		CBD771E42609BCDA00BFC816 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD771E32609BCDA00BFC816 /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		ACD8310126090BB600B57D52 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		ACD8310626090C1500B57D52 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		ACD8310B26090C2700B57D52 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		CBD771C72609866A00BFC816 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CBD771CC2609898A00BFC816 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CBD771D1260989A600BFC816 /* TextFieldWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithTitle.swift; sourceTree = "<group>"; };
+		CBD771D92609BCBB00BFC816 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		CBD771DE2609BCC800BFC816 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		CBD771E32609BCDA00BFC816 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		F08E483400245ADEA480442D /* Pods-HealthCareViewer-HealthCareViewerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCareViewer-HealthCareViewerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HealthCareViewer-HealthCareViewerUITests/Pods-HealthCareViewer-HealthCareViewerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0CBBDBCA05991CB4BFEC082 /* Pods-HealthCareViewer-HealthCareViewerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthCareViewer-HealthCareViewerUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthCareViewer-HealthCareViewerUITests/Pods-HealthCareViewer-HealthCareViewerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +125,6 @@
 				0D7D17117A32EB951F1E85A1 /* Pods-HealthCareViewerTests.debug.xcconfig */,
 				81859D5EBEC60786A525751E /* Pods-HealthCareViewerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +153,7 @@
 		ACD830B726090A0700B57D52 /* HealthCareViewer */ = {
 			isa = PBXGroup;
 			children = (
+				CBD771C62609864800BFC816 /* Common */,
 				ACD8311026090C7C00B57D52 /* Modules */,
 				ACD830FA26090B5C00B57D52 /* Supports */,
 				ACD830C626090A0A00B57D52 /* Info.plist */,
@@ -218,6 +230,35 @@
 				ACD830F926090B3E00B57D52 /* Controllers */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		CBD771C62609864800BFC816 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CBD771D82609BCAC00BFC816 /* Style */,
+				CBD771D72609BC4E00BFC816 /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CBD771D72609BC4E00BFC816 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CBD771C72609866A00BFC816 /* BaseViewController.swift */,
+				CBD771CC2609898A00BFC816 /* BaseView.swift */,
+				CBD771D1260989A600BFC816 /* TextFieldWithTitle.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CBD771D82609BCAC00BFC816 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				CBD771D92609BCBB00BFC816 /* Theme.swift */,
+				CBD771DE2609BCC800BFC816 /* Dimension.swift */,
+				CBD771E32609BCDA00BFC816 /* Resource.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,11 +462,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD771DA2609BCBB00BFC816 /* Theme.swift in Sources */,
 				ACD830B926090A0700B57D52 /* AppDelegate.swift in Sources */,
 				ACD830BB26090A0700B57D52 /* SceneDelegate.swift in Sources */,
+				CBD771E42609BCDA00BFC816 /* Resource.swift in Sources */,
+				CBD771D2260989A600BFC816 /* TextFieldWithTitle.swift in Sources */,
 				ACD8310726090C1500B57D52 /* SignInView.swift in Sources */,
 				ACD8310226090BB700B57D52 /* SignInViewController.swift in Sources */,
+				CBD771CD2609898A00BFC816 /* BaseView.swift in Sources */,
 				ACD8310C26090C2700B57D52 /* SignInModel.swift in Sources */,
+				CBD771DF2609BCC800BFC816 /* Dimension.swift in Sources */,
+				CBD771C82609866B00BFC816 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
